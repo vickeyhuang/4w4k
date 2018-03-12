@@ -3,19 +3,39 @@ Parameters:
   BucketName:
     Type: String
     Description: 'Bucket Name'
+
 Resources:
-  S3Buckets:
+  S3BucketswithWebhosted:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: '!Ref BucketName'
-      WebsiteConfiguration: null
-      IndexDocument: index.html
+      BucketName: !Ref 'BucketName'
+      WebsiteConfiguration:
+        IndexDocument: index.html
+
   S3BucketPolicy:
     Type: 'AWS::S3::BucketPolicy'
     Properties:
-      BucketName: '!Ref BucketName'
-      PolicyDocument: { Statement: [{ Action: ['s3:GetObject'], Effect: Allow, Resource: null, 'Fn::Join': [, '- "arn:aws:s3:::"', '!Ref BucketName', '/*'], Principal: '*' }] }
+      Bucket: !Ref 'BucketName'
+      PolicyDocument:
+        Statement:
+          - Action: ['s3:Get*']
+            Effect: Allow
+            Principal: "*"
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'BucketName', /*]]
+          - Action: ['s3:List*']
+            Effect: Allow
+            Principal: "*"
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'BucketName']]
+
   myDNS:
-    Type: 'AWS::Route53::RecordSetGroup'
+    Type: 'AWS::Route53::RecordSet'
     Properties:
-      RecordSets: { HostedZoneId: Z3A46USYXW1L2F, Name: www.cutecheery.info, Type: A, AliasTarget: { HostedZoneId: Z2M4EHUR26P7ZW, DNSName: s3-website-ap-northeast-1.amazonaws.com } }
+      Type: A
+      HostedZoneId: Z3A46USYXW1L2F
+      Name: xian.cutecherry.info
+      AliasTarget:
+        DNSName: s3-website-ap-northeast-1.amazonaws.com
+        EvaluateTargetHealth: True
+        HostedZoneId: Z2M4EHUR26P7ZW      
