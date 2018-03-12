@@ -1,0 +1,6 @@
+---
+- hosts: week1-1
+  connection: local
+  gather_facts: False
+  roles:
+    - week1-1

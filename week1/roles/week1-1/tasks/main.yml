@@ -1,0 +1,11 @@
+---
+  - name: week1-1
+    cloudformation:
+      stack_name: "Week-1-1"
+      state: present
+      region: "ap-southeast-1"
+      disable_rollback: true
+      template: "cfn-templates/week1-1.yml"
+      stack_policy: "policies/cloudformation/stack-policy.json"
+      template_parameters:
+        BucketName: "{{bucket_name}}"

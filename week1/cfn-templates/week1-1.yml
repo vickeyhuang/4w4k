@@ -1,0 +1,21 @@
+Description: 'Static Web Site'
+Parameters:
+  BucketName:
+    Type: String
+    Description: 'Bucket Name'
+Resources:
+  S3Buckets:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: '!Ref BucketName'
+      WebsiteConfiguration: null
+      IndexDocument: index.html
+  S3BucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      BucketName: '!Ref BucketName'
+      PolicyDocument: { Statement: [{ Action: ['s3:GetObject'], Effect: Allow, Resource: null, 'Fn::Join': [, '- "arn:aws:s3:::"', '!Ref BucketName', '/*'], Principal: '*' }] }
+  myDNS:
+    Type: 'AWS::Route53::RecordSetGroup'
+    Properties:
+      RecordSets: { HostedZoneId: Z3A46USYXW1L2F, Name: www.cutecheery.info, Type: A, AliasTarget: { HostedZoneId: Z2M4EHUR26P7ZW, DNSName: s3-website-ap-northeast-1.amazonaws.com } }
