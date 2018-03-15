@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?m05fdd');
+  src:  url('../fonts/icomoon.eot?m05fdd#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?m05fdd') format('truetype'),
+    url('../fonts/icomoon.woff?m05fdd') format('woff'),
+    url('../fonts/icomoon.svg?m05fdd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-uniE600:before {
+  content: "\e600";
+}
+.icon-uniE601:before {
+  content: "\e601";
+}
+.icon-uniE603:before {
+  content: "\e603";
+}
+.icon-uniE606:before {
+  content: "\e606";
+}
+.icon-uniE607:before {
+  content: "\e607";
+}
+.icon-uniE608:before {
+  content: "\e608";
+}
+.icon-uniF002:before {
+  content: "\f002";
+}
+.icon-uniF005:before {
+  content: "\f005";
+}
+.icon-uniF021:before {
+  content: "\f021";
+}
+.icon-uniF03B:before {
+  content: "\f03b";
+}
+.icon-uniF05D:before {
+  content: "\f05d";
+}
+.icon-uniF0C1:before {
+  content: "\f0c1";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
+.icon-happy:before {
+  content: "\e9df";
+  vertical-align: middle;
+}
+.icon-tongue:before {
+  content: "\e9e3";
+}
+.icon-wink:before {
+  content: "\e9e7";
+}
+.icon-grin:before {
+  content: "\e9e9";
+}
+.icon-evil:before {
+  content: "\e9ef";
+}
+.icon-shocked:before {
+  content: "\e9f1";
+}
+.icon-confused:before {
+  content: "\e9f5";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+
