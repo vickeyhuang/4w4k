@@ -2,6 +2,10 @@
 week1-1
 
 [week1-1:vars]
-bucket_name=xian.cutecherry.info
+bucket_name=www.cutecherry.info
+domain_name=cutecherry.info
+hosted_zone_id=Z3A46USYXW1L2F
+alias_s3_hosted_zone_id=Z2M4EHUR26P7ZW
+s3_website_endpoint=s3-website-ap-northeast-1.amazonaws.com
 
 ansible_python_interpreter=/usr/local/bin/python

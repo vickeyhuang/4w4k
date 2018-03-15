@@ -1,15 +1,16 @@
 ---
-  - name: week1-1
+  - name: week1-2
     cloudformation:
-      stack_name: "Week-1-1"
+      stack_name: "Week-1-2"
       state: present
       region: "ap-northeast-1"
       disable_rollback: true
-      template: "cfn-templates/week1-1.yml"
+      template: "cfn-templates/week1-2.yml"
       stack_policy: "policies/cloudformation/stack-policy.json"
       template_parameters:
         BucketName: "{{bucket_name}}"
         DomainName: "{{domain_name}}"
+        CloudfrontCertARN: "{{cloudfront_cert_arn}}"
         HostedZoneId: "{{hosted_zone_id}}"
-        AliasS3HostedZoneId: "{{alias_s3_hosted_zone_id}}"
-        S3WebEndpoint: "{{s3_website_endpoint}}"
+        CloudfrontDomainName: "{{cloudfront_domain_name}}"
+        ClondfrontCName: "{{cloudfront_cname}}"

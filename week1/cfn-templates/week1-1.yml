@@ -3,6 +3,18 @@ Parameters:
   BucketName:
     Type: String
     Description: 'Bucket Name'
+  DomainName:
+    Type: String
+    Description: "Domain Name"
+  HostedZoneId:
+    Type: String
+    Description: "Hosted Zone ID"
+  AliasS3HostedZoneId:
+    Type: String
+    Description: "Alias to S3 Hosted Zone ID"
+  S3WebEndpoint:
+    Type: String
+    Description: "Alias to S3 Website Endpoint"
 
 Resources:
   S3BucketswithWebhosted:
@@ -33,9 +45,9 @@ Resources:
     Type: 'AWS::Route53::RecordSet'
     Properties:
       Type: A
-      HostedZoneId: Z3A46USYXW1L2F
-      Name: xian.cutecherry.info
+      HostedZoneId: !Ref 'HostedZoneId'
+      Name: !Ref 'BucketName'
       AliasTarget:
-        DNSName: s3-website-ap-northeast-1.amazonaws.com
+        DNSName: !Ref 'S3WebEndpoint'
         EvaluateTargetHealth: True
-        HostedZoneId: Z2M4EHUR26P7ZW      
+        HostedZoneId: !Ref 'AliasS3HostedZoneId' 

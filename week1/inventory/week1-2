@@ -1,0 +1,13 @@
+[week1-2]
+week1-2
+
+[week1-2:vars]
+bucket_name=xian.cutecherry.info
+domain_name=cutecherry.info
+cloudfront_cert_arn='arn:aws:acm:us-east-1:530614085318:certificate/80c029f2-8298-41fa-8482-eb181b8fa4df'
+hosted_zone_id=Z3A46USYXW1L2F
+alias_cf_hosted_zone_id=Z2FDTNDATAQYW2
+cloudfront_domain_name=d2v0jlneg3t8pt.cloudfront.net
+cloudfront_cname=h2.cutecherry.info
+
+ansible_python_interpreter=/usr/local/bin/python
